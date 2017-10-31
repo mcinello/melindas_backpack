@@ -25,14 +25,13 @@ class Backpack
     # Ensure gym shoes are added to backpack if it's a gym day
     # Gotta get to the gym on Mondays and Thursdays.
     if day_of_week == 'monday' || day_of_week == 'thursday'
-      #add gym shoes to items
       @items << 'gym shoes'
     end
 
     # Bring a packed lunch on all weekdays, and snacks on weekends
     if day_of_week != 'saturday' && day_of_week != 'sunday'
       @items << 'packed lunch'
-    elsif false
+    else
       @items << 'snacks'
     end
   end
@@ -62,5 +61,7 @@ class Backpack
     end
     output.join("\n")
   end
-
 end
+
+melindas = Backpack.new(day_of_week: 'thursday', weather: 'rainy')
+puts melindas.print_summary_of_packing_list
